@@ -5,7 +5,7 @@
 * Get familiar with MVC pattern;
 #### Framework: #### ASP.NET
 
-* MVC(model-view-controller) * pattern separates the modeling of the domain, the presentation, and the actions based on user input into three separate classes
+*MVC(model-view-controller)* pattern separates the modeling of the domain, the presentation, and the actions based on user input into three separate classes
 * Model - manages the behavior and data of the application of the application , responds to the requests for information about its state 
 and responds to the instructions to change its state
 * View - manages the display of information 
