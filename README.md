@@ -1,3 +1,3 @@
-# WebTechnologiesLabs
-*Student:* Chirosca Ariadna
-*Group:* FAF-161
+# WebTechnologiesLabs  
+*Student:* Chirosca Ariadna  
+*Group:* FAF-161  
