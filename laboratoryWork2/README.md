@@ -6,7 +6,7 @@
 #### Framework: #### ASP.NET
 ASP.NET MVC is a framework for building web application that uses the general Model-View-Controller pattern.
 *MVC(model-view-controller)* pattern separates the modeling of the domain, the presentation, and the actions based on user input into three separate classes
-* Model - manages the behavior and data of the application of the application , responds to the requests for information about its state 
+* Model - manages the behavior and data of the application, responds to the requests for information about its state 
 and responds to the instructions to change its state
 * View - manages the display of information 
 * Controller - interprets the mouse and keyboard inputs from the user, informing the model or/and view to change as appropriate
