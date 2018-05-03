@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "_Navbar";
+}
+
+<div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+            <img src="~/assets/logo.png">
+        </a>
+    </div>
+    <ul class="nav navbar-nav pull-right">
+        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "Home" }, null)</li>
+        <li>@Html.ActionLink("About", "About", "Home", new { area = "About" }, null)</li>
+        <li>@Html.ActionLink("Designers", "Designers", "UserInfo", new { area = "Designers" }, null)</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "Contact" }, null)</li>
+        <li>@Html.ActionLink("SignIn", "signIn", "Home", new { area = "SignIn" }, null)</li>
+    </ul>
+</div>
+
