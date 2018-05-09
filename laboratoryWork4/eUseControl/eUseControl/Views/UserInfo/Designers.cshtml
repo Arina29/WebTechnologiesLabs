@@ -1,0 +1,64 @@
+﻿@model IEnumerable<eUseControl.Models.userInfo>
+
+@{
+    ViewBag.Title = "Designers";
+}
+@if (User.IsInRole("admin"))
+{
+    using (Html.BeginForm("AddDesigner", "UserInfo"))
+    {
+        <header id="header1">
+            <button class="btn btn-primary"> Add Designer </button>
+        </header>
+    }
+}
+else
+{
+    <h2 id="header1">
+        Designers List
+    </h2>
+}
+
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+
+<table id="customers" class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">@Html.ActionLink("Name", "Designers", "UserInfo", new { sortOrder = ViewBag.NameSortParm }, null)</th>
+            <th scope="col">Email</th>
+            <th scope="col">Style</th>
+            @if (User.IsInRole("admin"))
+            {
+                <th scope="col">Edit Information</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(user.Name, "Details", "UserInfo", new { id = user.Id }, null)</td>
+                <td>@user.email</td>
+                <td>@user.StyleTypes.StyleName</td>
+                @if (User.IsInRole("admin"))
+                {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "UserInfo", new { id = user.Id }, null)  /
+                    @Html.ActionLink("Delete", "Delete", "UserInfo", new { id = user.Id }, null)
+                </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+

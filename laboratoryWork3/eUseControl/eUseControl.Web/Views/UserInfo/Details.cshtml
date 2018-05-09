@@ -6,12 +6,11 @@
 <h2 id="header1">
     User information
 </h2>
-<div class="form-inline" style="align-content: center">
+<div class="form-inline col-md-3">
+     <img src="@Url.Content(Model.PicturePath.Replace("~", ""))" alt="Lights" style="height: auto; width: 300px" class="center-block">
+</div>
 
-            <img src="@Url.Content(Model.PicturePath.Replace("~", ""))" alt="Lights" style="height: auto; width: 300px">
-    </div>
-
-    <div class="card text-white bg-info mb-3" style="max-width: 300px;">
+    <div class="card text-white bg-info col-md-4" style="max-width: 300px;">
         <div class="card-header">
             <h3>Username: @Model.Name</h3>
         </div>

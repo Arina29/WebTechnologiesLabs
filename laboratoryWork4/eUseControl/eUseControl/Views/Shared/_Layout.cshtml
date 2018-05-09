@@ -1,0 +1,32 @@
+﻿@using System.Web.Optimization;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Design Studio | @ViewBag.Title </title>
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/navbar/css")
+
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false)}
+    @Styles.Render("~/bundles/main/css")
+
+</head>
+<body class="Home">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        @Html.Partial("_Navbar");
+    </div>
+
+    <div class="container-fluid body-content">
+        @RenderBody()
+        <hr />
+        <footer id = "footer" class = "top-space">
+            @Html.Partial("_Footer")
+        </footer>
+    </div>
+    @Scripts.Render("~bundles/jquery-1.10.2.min.js")
+    @Scripts.Render("~bundles/bootstrap.min.js")
+</body>
+</html>

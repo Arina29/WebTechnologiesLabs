@@ -1,0 +1,50 @@
+﻿@model eUseControl.Models.userInfo
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 id="header1">
+    User information
+</h2>
+<div class="form-inline col-md-3">
+    <img src="@Url.Content(Model.PicturePath.Replace("~", ""))" alt="Lights" style="height: auto; width: 300px" class="center-block">
+</div>
+
+<div class="card text-white bg-info col-md-4" style="max-width: 300px;">
+    <div class="card-header">
+        <h3>Username: @Model.Name</h3>
+    </div>
+    <div class="card-body">
+        <h4> Phone Number: @Model.phoneNumber </h4>
+        <hr />
+        <h4>
+            Email Adress: @Model.email
+        </h4>
+        <hr />
+        <h4>
+            Style: @Model.StyleTypes.StyleName
+        </h4>
+    </div>
+</div>
+</div>
+<hr />
+
+
+@if (Model.profileId == User.Identity.GetUserId())
+{
+    <div style="font-size: 18px; text-align: center">
+        @Html.ActionLink("Edit", "Edit", "UserInfo", new { id = Model.Id }, null) /
+        @Html.ActionLink("Delete", "Delete", "UserInfo", new { id = Model.Id }, null) /
+        @Html.ActionLink("Back", "Designers", "UserInfo")
+
+    </div>
+}
+else
+{
+    <div style="font-size: 18px; text-align: center">
+        @Html.ActionLink("Back", "Designers", "UserInfo")
+    </div>
+}
+
